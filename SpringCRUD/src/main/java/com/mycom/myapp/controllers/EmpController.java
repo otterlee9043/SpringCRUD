@@ -45,6 +45,14 @@ public class EmpController {
         m.addAttribute("list",list);
         return "viewemp";  
     }  
+    
+    @RequestMapping(value="/list", method = RequestMethod.GET)  
+    public String view(Model m){  
+        List<Emp> list=dao.getEmployees();  
+        m.addAttribute("list",list);
+        return "viewemp";  
+    }  
+    
     /* It displays object data into form for the given id.  
      * The @PathVariable puts URL data into variable.*/  
     @RequestMapping(value="/editemp/{id}", method = RequestMethod.GET)  
